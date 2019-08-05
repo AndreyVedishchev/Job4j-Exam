@@ -93,13 +93,13 @@ public class ExamActivity extends AppCompatActivity {
         );
     }
 
-    private void nextBtn(View view) {
+    public void nextBtn(View view) {
 
-        List<Integer> list = new ArrayList<>();
+        //List<Integer> list = new ArrayList<>();
         //list.add(position, questions.get(position).getId());
-//        showAnswer();
-//        position++;
-//        fillForm();
+        showAnswer();
+        position++;
+        fillForm();
 
         //if(position >= 2) {
 //            Intent intent = new Intent(ExamActivity.this, ResultActivity.class);
@@ -108,12 +108,12 @@ public class ExamActivity extends AppCompatActivity {
         //}
     }
 
-    private void prevBtn(View view) {
+    public void prevBtn(View view) {
         position--;
         fillForm();
     }
 
-    private void showAnswer() {
+    public void showAnswer() {
         RadioGroup variants = findViewById(R.id.variants);
         int id = variants.getCheckedRadioButtonId();
         Question question = this.questions.get(this.position);
@@ -149,7 +149,7 @@ public class ExamActivity extends AppCompatActivity {
         Log.d(TAG, "onPause");
     }
 
-    private void load(Bundle state) {
+    public void load(Bundle state) {
         if(state != null) {
             cntTurn = state.getInt(KEY);
         }
@@ -167,7 +167,7 @@ public class ExamActivity extends AppCompatActivity {
         Log.d(TAG, "onDestroy");
     }
 
-    private void fillForm() {
+    public void fillForm() {
         findViewById(R.id.previous).setEnabled(position != 0);
         findViewById(R.id.next).setEnabled(position != questions.size() - 1);
         final TextView text = findViewById(R.id.question);
