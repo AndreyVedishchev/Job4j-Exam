@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Job4j Exam</string>
+    <string name="hint">подсказка</string>
+    <string name="date">дата</string>
+    <string name="obj_name">имя объекта</string>
+    <string name="street_house">улица дом</string>
+    <string name="fio">ФИО заказчика</string>
+    <string name="temper_air">температура воздуха</string>
+    <string name="wet_air">влажность воздуха</string>
+    <string name="atm_press">атмосферное давление</string>
+    <string name="num_rep">номер отчета</string>
+    <string name="radiobutton_name">radiobutton</string>
+    <string name="back">назад</string>
+    <string name="next">далее</string>
+    <string name="hello">Hello Andrew!</string>
+    <string name="domain_prompt">Выберите область</string>
+    <string name="select_date">Выберите дату</string>
+    <string name="exp_date">Дата проведения испытания</string>
+    <string-array name="domain_arrays">
+        <item>Выберите область</item>
+        <item>Московская</item>
+        <item>СПб</item>
+    </string-array>
+    <string-array name="date">
+        <item>Выберите дату</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>

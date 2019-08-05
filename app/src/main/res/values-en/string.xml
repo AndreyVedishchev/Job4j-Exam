@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Job4j Exam</string>
+    <string name="hint">hint</string>
+    <string name="date">date</string>
+    <string name="obj_name">object name</string>
+    <string name="street_house">street house</string>
+    <string name="fio">FIO</string>
+    <string name="temper_air">temperature air</string>
+    <string name="wet_air">wet air</string>
+    <string name="atm_press">atmosphere pressure</string>
+    <string name="num_rep">report number</string>
+    <string name="radiobutton_name">radiobutton</string>
+    <string name="back">back</string>
+    <string name="next">next</string>
+    <string name="hello">Hello Andrew!</string>
+    <string name="domain_prompt">select region</string>
+    <string name="select_date">select date</string>
+    <string name="exp_date">date of test</string>
+    <string-array name="domain_arrays">
+        <item>select region</item>
+        <item>Moscow reg</item>
+        <item>SPB</item>
+    </string-array>
+    <string-array name="date">
+        <item>select date</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>
