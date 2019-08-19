@@ -17,4 +17,6 @@ public class ResultActivity extends AppCompatActivity {
         text.setText(arr.toString());
     }
 
+
+
 }

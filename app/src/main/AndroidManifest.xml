@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".HintActivity"></activity>
         <activity android:name=".ResultActivity"></activity>
-        <activity android:name=".ExamActivity">
+        <activity android:name=".ExamsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

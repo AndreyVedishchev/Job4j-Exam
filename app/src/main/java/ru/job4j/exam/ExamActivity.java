@@ -1,10 +1,14 @@
 package ru.job4j.exam;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -68,7 +72,7 @@ public class ExamActivity extends AppCompatActivity {
                     showAnswer();
                     position++;
                     fillForm();
-                    if(cnt == 3) {
+                    if (cnt == 3) {
                         Intent intent = new Intent(ExamActivity.this, ResultActivity.class);
                         intent.putExtra("list", (Serializable) list);
                         startActivity(intent);
@@ -150,7 +154,7 @@ public class ExamActivity extends AppCompatActivity {
     }
 
     public void load(Bundle state) {
-        if(state != null) {
+        if (state != null) {
             cntTurn = state.getInt(KEY);
         }
     }
@@ -180,5 +184,62 @@ public class ExamActivity extends AppCompatActivity {
             button.setId(option.getId());
             button.setText(option.getText());
         }
+    }
+
+    public static class ExamHolder extends RecyclerView.ViewHolder {
+
+        private View view;
+
+        public ExamHolder(@NonNull View view) {
+            super(view);
+            this.view = itemView;
+        }
+    }
+
+    public static class ExamAdapter extends RecyclerView.Adapter<ExamHolder> {
+
+        private final List<Exam> exams;
+
+        public ExamAdapter(List<Exam> exams) {
+            this.exams = exams;
+        }
+
+        /**
+         * Это метод загружает внутренних вид RecyclyView. В нашем случае это шаблон res/layout/info_exam,xml
+         * @param parent
+         * @param i
+         * @return - отдаем модель Holder с загруженным видом.
+         */
+        @NonNull
+        @Override
+        public ExamHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+            LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+            View view = inflater.inflate(R.layout.info_exam, parent, false);
+            return new ExamHolder(view);
+        }
+
+        /**
+         * Это метод загружает данные в наш вид.
+         * @param holder - это вид
+         * @param i - указатель элемента в списке.
+         */
+        @Override
+        public void onBindViewHolder(@NonNull ExamHolder holder, int i) {
+            final Exam exam = this.exams.get(i);
+            TextView text = holder.view.findViewById(R.id.info);
+            text.setText(exam.getName());
+        }
+
+        /**
+         * это метод указывает сколько всего элементов в списке.
+         * @return
+         */
+        @Override
+        public int getItemCount() {
+            return this.exams.size();
+        }
+
+
+
     }
 }
